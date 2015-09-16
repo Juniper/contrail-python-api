@@ -16,6 +16,8 @@ from requests.exceptions import ConnectionError
 import pycontrail.gen.resource_common
 import pycontrail.gen.vnc_api_client_gen
 import exceptions
+from pycontrail.gen.resource_client import *
+from pycontrail.gen.resource_xsd import *
 
 logger = logging.getLogger(__name__)
 
@@ -30,8 +32,7 @@ def str_to_class(class_name):
     return getattr(sys.modules['pycontrail.gen.resource_client'], class_name)
 
 def obj_type_to_class(obj_type):
-    return str_to_class(CamelCase(obj_type))
-
+    return str_to_class(CamelCase(obj_type.replace('-', '_')))
 
 class ActionUrlDict(dict):
     """Action url dictionary with operator([]) overloading to parse home page
@@ -77,8 +78,10 @@ class Client(object):
         if hasattr(pycontrail.gen.vnc_api_client_gen, 'all_resource_types'):
             all_resource_types = pycontrail.gen.all_resource_types
         else:
-            all_resource_types = \
+            # <=2.20
+            obj_types = \
             pycontrail.gen.vnc_api_client_gen.VncApiClientGen(None)._type_to_class.keys()
+            all_resource_types = [x.replace('_', '-') for x in obj_types]
 
         for resource_type in all_resource_types:
             obj_type = resource_type.replace('-', '_')
@@ -283,7 +286,7 @@ class Client(object):
 
     def _object_create(self, res_type, obj):
         obj_type = res_type.replace('-', '_')
-        obj_cls = get_object_class(res_type)
+        obj_cls = obj_type_to_class(res_type)
 
         obj._pending_field_updates |= obj._pending_ref_updates
         obj._pending_ref_updates = set([])
@@ -306,7 +309,7 @@ class Client(object):
     def _object_read(self, res_type, fq_name=None, fq_name_str=None,
                      id=None, fields=None):
         obj_type = res_type.replace('-', '_')
-        obj_cls = get_object_class(res_type)
+        obj_cls = obj_type_to_class(res_type)
 
         (args_ok, result) = self._read_args_to_id(
             res_type, fq_name, fq_name_str, id)
@@ -333,7 +336,7 @@ class Client(object):
 
     def _object_update(self, res_type, obj):
         obj_type = res_type.replace('-', '_')
-        obj_cls = get_object_class(res_type)
+        obj_cls = obj_type_to_class(res_type)
 
         # Read in uuid from api-server if not specified in obj
         if not obj.uuid:
@@ -375,7 +378,7 @@ class Client(object):
 
     def _object_delete(self, res_type, fq_name=None, id=None):
         obj_type = res_type.replace('-', '_')
-        obj_cls = get_object_class(res_type)
+        obj_cls = obj_type_to_class(res_type)
 
         (args_ok, result) = self._read_args_to_id(
             obj_type=res_type, fq_name=fq_name, id=id)
@@ -390,7 +393,7 @@ class Client(object):
 
     def _object_get_default_id(self, res_type):
         obj_type = res_type.replace('-', '_')
-        obj_cls = get_object_class(res_type)
+        obj_cls = obj_type_to_class(res_type)
 
         return self.fq_name_to_id(res_type, obj_cls().get_fq_name())
     # end _object_get_default_id
@@ -457,7 +460,7 @@ class Client(object):
         url = self._action_url['ref-update']
         try:
             content = self._request('POST', url, data=json_body)
-        except HttpError as he:
+        except exceptions.HttpError as he:
             if he.status_code == 404:
                 return None
             raise he
@@ -472,7 +475,7 @@ class Client(object):
         url = self._action_url['name-to-id']
         try:
             content = self._request('POST', url, data=json_body)
-        except HttpError as he:
+        except exceptions.HttpError as he:
             if he.status_code == 404:
                 return None
             raise he
