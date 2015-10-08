@@ -16,8 +16,6 @@ from requests.exceptions import ConnectionError
 import pycontrail.gen.resource_common
 import pycontrail.gen.vnc_api_client_gen
 import exceptions
-from pycontrail.gen.resource_client import *
-from pycontrail.gen.resource_xsd import *
 
 logger = logging.getLogger(__name__)
 
@@ -32,7 +30,10 @@ def str_to_class(class_name):
     return getattr(sys.modules['pycontrail.gen.resource_client'], class_name)
 
 def obj_type_to_class(obj_type):
-    return str_to_class(CamelCase(obj_type.replace('-', '_')))
+    try:
+        return str_to_class(CamelCase(obj_type.replace('-', '_')))
+    except AttributeError:
+        return None
 
 class ActionUrlDict(dict):
     """Action url dictionary with operator([]) overloading to parse home page
