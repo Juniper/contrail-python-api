@@ -423,11 +423,14 @@ class Client(object):
             return None
 
         if 'v2' in self._auth_params['auth_url']:
-            body_dict = {'auth': {
-                'passwordCredentials': {
-                    'username': self._auth_params['username'],
-                    'password': self._auth_params['password'],
-                    'tenantName': self._auth_params['tenant_name']}}}
+            body_dict = {
+                'auth': {
+                    'passwordCredentials': {
+                        'username': self._auth_params['username'],
+                        'password': self._auth_params['password'],
+                    },
+                    'tenantName': self._auth_params['tenant_name']
+                }}
             return json.dumps(body_dict)
         else:
             body_dict = {'auth': {
