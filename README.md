@@ -3,6 +3,26 @@ contrail-python-api
 
 python API bindings for Contrail.
 
+Installing
+==========
+
+    git clone https://github.com/Juniper/contrail-python-api
+    cd contrail-python-api
+    python setup.py install
+
+Example Usage
+=============
+
+    >>> import pycontrail.client as client
+    >>> conn = client.Client(
+            url='http://10.84.34.141:8082',
+            auth_params={'type':'keystone',
+                         'auth_url':'http://10.84.34.141:5000/v2.0',
+                         'username':'admin',
+                         'password':'secret',
+                         'tenant_name':'admin'})
+    >>> conn.virtual_networks_list()
+
 
 License
 =======
