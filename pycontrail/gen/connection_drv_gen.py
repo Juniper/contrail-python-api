@@ -183,63 +183,63 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_instance_ip_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_instance_ip_delete
 
-    def network_policy_create(self, obj):
-        """Create new network-policy.
+    def floating_ip_pool_create(self, obj):
+        """Create new floating-ip-pool.
         
-        :param obj: :class:`.NetworkPolicy` object
-        
-        """
-        raise NotImplementedError, 'network_policy_create is %s\'s responsibility' % (str(type (self)))
-    #end network_policy_create
-
-    def network_policy_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
-        """Return network-policy information.
-        
-        :param fq_name: Fully qualified name of network-policy
-        :param fq_name_str: Fully qualified name string of network-policy
-        :param id: UUID of network-policy
-        :param ifmap_id: IFMAP id of network-policy
-        :returns: :class:`.NetworkPolicy` object
+        :param obj: :class:`.FloatingIpPool` object
         
         """
-        raise NotImplementedError, 'network_policy_read is %s\'s responsibility' % (str(type (self)))
-    #end network_policy_read
+        raise NotImplementedError, 'floating_ip_pool_create is %s\'s responsibility' % (str(type (self)))
+    #end floating_ip_pool_create
 
-    def network_policy_update(self, obj):
-        """Update network-policy.
+    def floating_ip_pool_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return floating-ip-pool information.
         
-        :param obj: :class:`.NetworkPolicy` object
+        :param fq_name: Fully qualified name of floating-ip-pool
+        :param fq_name_str: Fully qualified name string of floating-ip-pool
+        :param id: UUID of floating-ip-pool
+        :param ifmap_id: IFMAP id of floating-ip-pool
+        :returns: :class:`.FloatingIpPool` object
         
         """
-        raise NotImplementedError, 'network_policy_update is %s\'s responsibility' % (str(type (self)))
-    #end network_policy_update
+        raise NotImplementedError, 'floating_ip_pool_read is %s\'s responsibility' % (str(type (self)))
+    #end floating_ip_pool_read
 
-    def network_policys_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
-        """List all network-policys.
+    def floating_ip_pool_update(self, obj):
+        """Update floating-ip-pool.
+        
+        :param obj: :class:`.FloatingIpPool` object
+        
+        """
+        raise NotImplementedError, 'floating_ip_pool_update is %s\'s responsibility' % (str(type (self)))
+    #end floating_ip_pool_update
+
+    def floating_ip_pools_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all floating-ip-pools.
         
         :param parent_id: UUID of parent as optional search filter
         :param parent_fq_name: full qualified name of parent as optional search filter
-        :returns: list of :class:`.NetworkPolicy` objects
+        :returns: list of :class:`.FloatingIpPool` objects
         
         """
-        raise NotImplementedError, 'network_policys_list is %s\'s responsibility' % (str(type (self)))
-    #end network_policys_list
+        raise NotImplementedError, 'floating_ip_pools_list is %s\'s responsibility' % (str(type (self)))
+    #end floating_ip_pools_list
 
-    def network_policy_delete(self, fq_name = None, id = None, ifmap_id = None):
-        """Delete network-policy from the system.
+    def floating_ip_pool_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete floating-ip-pool from the system.
         
-        :param fq_name: Fully qualified name of network-policy
-        :param id: UUID of network-policy
-        :param ifmap_id: IFMAP id of network-policy
+        :param fq_name: Fully qualified name of floating-ip-pool
+        :param id: UUID of floating-ip-pool
+        :param ifmap_id: IFMAP id of floating-ip-pool
         
         """
-        raise NotImplementedError, 'network_policy_delete is %s\'s responsibility' % (str(type (self)))
-    #end network_policy_delete
+        raise NotImplementedError, 'floating_ip_pool_delete is %s\'s responsibility' % (str(type (self)))
+    #end floating_ip_pool_delete
 
-    def get_default_network_policy_id(self):
-        """Return UUID of default network-policy."""
-        raise NotImplementedError, 'get_default_network_policy_delete is %s\'s responsibility' % (str(type (self)))
-    #end get_default_network_policy_delete
+    def get_default_floating_ip_pool_id(self):
+        """Return UUID of default floating-ip-pool."""
+        raise NotImplementedError, 'get_default_floating_ip_pool_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_floating_ip_pool_delete
 
     def loadbalancer_pool_create(self, obj):
         """Create new loadbalancer-pool.
@@ -409,6 +409,58 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_route_target_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_route_target_delete
 
+    def discovery_service_assignment_create(self, obj):
+        """Create new discovery-service-assignment.
+        
+        :param obj: :class:`.DiscoveryServiceAssignment` object
+        
+        """
+        raise NotImplementedError, 'discovery_service_assignment_create is %s\'s responsibility' % (str(type (self)))
+    #end discovery_service_assignment_create
+
+    def discovery_service_assignment_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return discovery-service-assignment information.
+        
+        :param fq_name: Fully qualified name of discovery-service-assignment
+        :param fq_name_str: Fully qualified name string of discovery-service-assignment
+        :param id: UUID of discovery-service-assignment
+        :param ifmap_id: IFMAP id of discovery-service-assignment
+        :returns: :class:`.DiscoveryServiceAssignment` object
+        
+        """
+        raise NotImplementedError, 'discovery_service_assignment_read is %s\'s responsibility' % (str(type (self)))
+    #end discovery_service_assignment_read
+
+    def discovery_service_assignment_update(self, obj):
+        """Update discovery-service-assignment.
+        
+        :param obj: :class:`.DiscoveryServiceAssignment` object
+        
+        """
+        raise NotImplementedError, 'discovery_service_assignment_update is %s\'s responsibility' % (str(type (self)))
+    #end discovery_service_assignment_update
+
+    def discovery_service_assignments_list(self, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all discovery-service-assignments."""
+        raise NotImplementedError, 'discovery_service_assignments_list is %s\'s responsibility' % (str(type (self)))
+    #end discovery_service_assignments_list
+
+    def discovery_service_assignment_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete discovery-service-assignment from the system.
+        
+        :param fq_name: Fully qualified name of discovery-service-assignment
+        :param id: UUID of discovery-service-assignment
+        :param ifmap_id: IFMAP id of discovery-service-assignment
+        
+        """
+        raise NotImplementedError, 'discovery_service_assignment_delete is %s\'s responsibility' % (str(type (self)))
+    #end discovery_service_assignment_delete
+
+    def get_default_discovery_service_assignment_id(self):
+        """Return UUID of default discovery-service-assignment."""
+        raise NotImplementedError, 'get_default_discovery_service_assignment_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_discovery_service_assignment_delete
+
     def floating_ip_create(self, obj):
         """Create new floating-ip.
         
@@ -467,63 +519,63 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_floating_ip_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_floating_ip_delete
 
-    def floating_ip_pool_create(self, obj):
-        """Create new floating-ip-pool.
+    def network_policy_create(self, obj):
+        """Create new network-policy.
         
-        :param obj: :class:`.FloatingIpPool` object
-        
-        """
-        raise NotImplementedError, 'floating_ip_pool_create is %s\'s responsibility' % (str(type (self)))
-    #end floating_ip_pool_create
-
-    def floating_ip_pool_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
-        """Return floating-ip-pool information.
-        
-        :param fq_name: Fully qualified name of floating-ip-pool
-        :param fq_name_str: Fully qualified name string of floating-ip-pool
-        :param id: UUID of floating-ip-pool
-        :param ifmap_id: IFMAP id of floating-ip-pool
-        :returns: :class:`.FloatingIpPool` object
+        :param obj: :class:`.NetworkPolicy` object
         
         """
-        raise NotImplementedError, 'floating_ip_pool_read is %s\'s responsibility' % (str(type (self)))
-    #end floating_ip_pool_read
+        raise NotImplementedError, 'network_policy_create is %s\'s responsibility' % (str(type (self)))
+    #end network_policy_create
 
-    def floating_ip_pool_update(self, obj):
-        """Update floating-ip-pool.
+    def network_policy_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return network-policy information.
         
-        :param obj: :class:`.FloatingIpPool` object
+        :param fq_name: Fully qualified name of network-policy
+        :param fq_name_str: Fully qualified name string of network-policy
+        :param id: UUID of network-policy
+        :param ifmap_id: IFMAP id of network-policy
+        :returns: :class:`.NetworkPolicy` object
         
         """
-        raise NotImplementedError, 'floating_ip_pool_update is %s\'s responsibility' % (str(type (self)))
-    #end floating_ip_pool_update
+        raise NotImplementedError, 'network_policy_read is %s\'s responsibility' % (str(type (self)))
+    #end network_policy_read
 
-    def floating_ip_pools_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
-        """List all floating-ip-pools.
+    def network_policy_update(self, obj):
+        """Update network-policy.
+        
+        :param obj: :class:`.NetworkPolicy` object
+        
+        """
+        raise NotImplementedError, 'network_policy_update is %s\'s responsibility' % (str(type (self)))
+    #end network_policy_update
+
+    def network_policys_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all network-policys.
         
         :param parent_id: UUID of parent as optional search filter
         :param parent_fq_name: full qualified name of parent as optional search filter
-        :returns: list of :class:`.FloatingIpPool` objects
+        :returns: list of :class:`.NetworkPolicy` objects
         
         """
-        raise NotImplementedError, 'floating_ip_pools_list is %s\'s responsibility' % (str(type (self)))
-    #end floating_ip_pools_list
+        raise NotImplementedError, 'network_policys_list is %s\'s responsibility' % (str(type (self)))
+    #end network_policys_list
 
-    def floating_ip_pool_delete(self, fq_name = None, id = None, ifmap_id = None):
-        """Delete floating-ip-pool from the system.
+    def network_policy_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete network-policy from the system.
         
-        :param fq_name: Fully qualified name of floating-ip-pool
-        :param id: UUID of floating-ip-pool
-        :param ifmap_id: IFMAP id of floating-ip-pool
+        :param fq_name: Fully qualified name of network-policy
+        :param id: UUID of network-policy
+        :param ifmap_id: IFMAP id of network-policy
         
         """
-        raise NotImplementedError, 'floating_ip_pool_delete is %s\'s responsibility' % (str(type (self)))
-    #end floating_ip_pool_delete
+        raise NotImplementedError, 'network_policy_delete is %s\'s responsibility' % (str(type (self)))
+    #end network_policy_delete
 
-    def get_default_floating_ip_pool_id(self):
-        """Return UUID of default floating-ip-pool."""
-        raise NotImplementedError, 'get_default_floating_ip_pool_delete is %s\'s responsibility' % (str(type (self)))
-    #end get_default_floating_ip_pool_delete
+    def get_default_network_policy_id(self):
+        """Return UUID of default network-policy."""
+        raise NotImplementedError, 'get_default_network_policy_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_network_policy_delete
 
     def physical_router_create(self, obj):
         """Create new physical-router.
@@ -640,6 +692,64 @@ class ConnectionDriverBase(object):
         """Return UUID of default bgp-router."""
         raise NotImplementedError, 'get_default_bgp_router_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_bgp_router_delete
+
+    def api_access_list_create(self, obj):
+        """Create new api-access-list.
+        
+        :param obj: :class:`.ApiAccessList` object
+        
+        """
+        raise NotImplementedError, 'api_access_list_create is %s\'s responsibility' % (str(type (self)))
+    #end api_access_list_create
+
+    def api_access_list_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return api-access-list information.
+        
+        :param fq_name: Fully qualified name of api-access-list
+        :param fq_name_str: Fully qualified name string of api-access-list
+        :param id: UUID of api-access-list
+        :param ifmap_id: IFMAP id of api-access-list
+        :returns: :class:`.ApiAccessList` object
+        
+        """
+        raise NotImplementedError, 'api_access_list_read is %s\'s responsibility' % (str(type (self)))
+    #end api_access_list_read
+
+    def api_access_list_update(self, obj):
+        """Update api-access-list.
+        
+        :param obj: :class:`.ApiAccessList` object
+        
+        """
+        raise NotImplementedError, 'api_access_list_update is %s\'s responsibility' % (str(type (self)))
+    #end api_access_list_update
+
+    def api_access_lists_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all api-access-lists.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.ApiAccessList` objects
+        
+        """
+        raise NotImplementedError, 'api_access_lists_list is %s\'s responsibility' % (str(type (self)))
+    #end api_access_lists_list
+
+    def api_access_list_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete api-access-list from the system.
+        
+        :param fq_name: Fully qualified name of api-access-list
+        :param id: UUID of api-access-list
+        :param ifmap_id: IFMAP id of api-access-list
+        
+        """
+        raise NotImplementedError, 'api_access_list_delete is %s\'s responsibility' % (str(type (self)))
+    #end api_access_list_delete
+
+    def get_default_api_access_list_id(self):
+        """Return UUID of default api-access-list."""
+        raise NotImplementedError, 'get_default_api_access_list_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_api_access_list_delete
 
     def virtual_router_create(self, obj):
         """Create new virtual-router.
@@ -892,7 +1002,7 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'service_appliance_update is %s\'s responsibility' % (str(type (self)))
     #end service_appliance_update
 
-    def service_appliances_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+    def service_appliances_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
         """List all service-appliances.
         
         :param parent_id: UUID of parent as optional search filter
@@ -919,63 +1029,63 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_service_appliance_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_service_appliance_delete
 
-    def service_instance_create(self, obj):
-        """Create new service-instance.
+    def routing_policy_create(self, obj):
+        """Create new routing-policy.
         
-        :param obj: :class:`.ServiceInstance` object
-        
-        """
-        raise NotImplementedError, 'service_instance_create is %s\'s responsibility' % (str(type (self)))
-    #end service_instance_create
-
-    def service_instance_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
-        """Return service-instance information.
-        
-        :param fq_name: Fully qualified name of service-instance
-        :param fq_name_str: Fully qualified name string of service-instance
-        :param id: UUID of service-instance
-        :param ifmap_id: IFMAP id of service-instance
-        :returns: :class:`.ServiceInstance` object
+        :param obj: :class:`.RoutingPolicy` object
         
         """
-        raise NotImplementedError, 'service_instance_read is %s\'s responsibility' % (str(type (self)))
-    #end service_instance_read
+        raise NotImplementedError, 'routing_policy_create is %s\'s responsibility' % (str(type (self)))
+    #end routing_policy_create
 
-    def service_instance_update(self, obj):
-        """Update service-instance.
+    def routing_policy_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return routing-policy information.
         
-        :param obj: :class:`.ServiceInstance` object
+        :param fq_name: Fully qualified name of routing-policy
+        :param fq_name_str: Fully qualified name string of routing-policy
+        :param id: UUID of routing-policy
+        :param ifmap_id: IFMAP id of routing-policy
+        :returns: :class:`.RoutingPolicy` object
         
         """
-        raise NotImplementedError, 'service_instance_update is %s\'s responsibility' % (str(type (self)))
-    #end service_instance_update
+        raise NotImplementedError, 'routing_policy_read is %s\'s responsibility' % (str(type (self)))
+    #end routing_policy_read
 
-    def service_instances_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
-        """List all service-instances.
+    def routing_policy_update(self, obj):
+        """Update routing-policy.
+        
+        :param obj: :class:`.RoutingPolicy` object
+        
+        """
+        raise NotImplementedError, 'routing_policy_update is %s\'s responsibility' % (str(type (self)))
+    #end routing_policy_update
+
+    def routing_policys_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all routing-policys.
         
         :param parent_id: UUID of parent as optional search filter
         :param parent_fq_name: full qualified name of parent as optional search filter
-        :returns: list of :class:`.ServiceInstance` objects
+        :returns: list of :class:`.RoutingPolicy` objects
         
         """
-        raise NotImplementedError, 'service_instances_list is %s\'s responsibility' % (str(type (self)))
-    #end service_instances_list
+        raise NotImplementedError, 'routing_policys_list is %s\'s responsibility' % (str(type (self)))
+    #end routing_policys_list
 
-    def service_instance_delete(self, fq_name = None, id = None, ifmap_id = None):
-        """Delete service-instance from the system.
+    def routing_policy_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete routing-policy from the system.
         
-        :param fq_name: Fully qualified name of service-instance
-        :param id: UUID of service-instance
-        :param ifmap_id: IFMAP id of service-instance
+        :param fq_name: Fully qualified name of routing-policy
+        :param id: UUID of routing-policy
+        :param ifmap_id: IFMAP id of routing-policy
         
         """
-        raise NotImplementedError, 'service_instance_delete is %s\'s responsibility' % (str(type (self)))
-    #end service_instance_delete
+        raise NotImplementedError, 'routing_policy_delete is %s\'s responsibility' % (str(type (self)))
+    #end routing_policy_delete
 
-    def get_default_service_instance_id(self):
-        """Return UUID of default service-instance."""
-        raise NotImplementedError, 'get_default_service_instance_delete is %s\'s responsibility' % (str(type (self)))
-    #end get_default_service_instance_delete
+    def get_default_routing_policy_id(self):
+        """Return UUID of default routing-policy."""
+        raise NotImplementedError, 'get_default_routing_policy_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_routing_policy_delete
 
     def namespace_create(self, obj):
         """Create new namespace.
@@ -1093,6 +1203,64 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_logical_interface_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_logical_interface_delete
 
+    def service_instance_create(self, obj):
+        """Create new service-instance.
+        
+        :param obj: :class:`.ServiceInstance` object
+        
+        """
+        raise NotImplementedError, 'service_instance_create is %s\'s responsibility' % (str(type (self)))
+    #end service_instance_create
+
+    def service_instance_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return service-instance information.
+        
+        :param fq_name: Fully qualified name of service-instance
+        :param fq_name_str: Fully qualified name string of service-instance
+        :param id: UUID of service-instance
+        :param ifmap_id: IFMAP id of service-instance
+        :returns: :class:`.ServiceInstance` object
+        
+        """
+        raise NotImplementedError, 'service_instance_read is %s\'s responsibility' % (str(type (self)))
+    #end service_instance_read
+
+    def service_instance_update(self, obj):
+        """Update service-instance.
+        
+        :param obj: :class:`.ServiceInstance` object
+        
+        """
+        raise NotImplementedError, 'service_instance_update is %s\'s responsibility' % (str(type (self)))
+    #end service_instance_update
+
+    def service_instances_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all service-instances.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.ServiceInstance` objects
+        
+        """
+        raise NotImplementedError, 'service_instances_list is %s\'s responsibility' % (str(type (self)))
+    #end service_instances_list
+
+    def service_instance_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete service-instance from the system.
+        
+        :param fq_name: Fully qualified name of service-instance
+        :param id: UUID of service-instance
+        :param ifmap_id: IFMAP id of service-instance
+        
+        """
+        raise NotImplementedError, 'service_instance_delete is %s\'s responsibility' % (str(type (self)))
+    #end service_instance_delete
+
+    def get_default_service_instance_id(self):
+        """Return UUID of default service-instance."""
+        raise NotImplementedError, 'get_default_service_instance_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_service_instance_delete
+
     def route_table_create(self, obj):
         """Create new route-table.
         
@@ -1182,7 +1350,7 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'physical_interface_update is %s\'s responsibility' % (str(type (self)))
     #end physical_interface_update
 
-    def physical_interfaces_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+    def physical_interfaces_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
         """List all physical-interfaces.
         
         :param parent_id: UUID of parent as optional search filter
@@ -1266,6 +1434,122 @@ class ConnectionDriverBase(object):
         """Return UUID of default access-control-list."""
         raise NotImplementedError, 'get_default_access_control_list_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_access_control_list_delete
+
+    def bgp_as_a_service_create(self, obj):
+        """Create new bgp-as-a-service.
+        
+        :param obj: :class:`.BgpAsAService` object
+        
+        """
+        raise NotImplementedError, 'bgp_as_a_service_create is %s\'s responsibility' % (str(type (self)))
+    #end bgp_as_a_service_create
+
+    def bgp_as_a_service_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return bgp-as-a-service information.
+        
+        :param fq_name: Fully qualified name of bgp-as-a-service
+        :param fq_name_str: Fully qualified name string of bgp-as-a-service
+        :param id: UUID of bgp-as-a-service
+        :param ifmap_id: IFMAP id of bgp-as-a-service
+        :returns: :class:`.BgpAsAService` object
+        
+        """
+        raise NotImplementedError, 'bgp_as_a_service_read is %s\'s responsibility' % (str(type (self)))
+    #end bgp_as_a_service_read
+
+    def bgp_as_a_service_update(self, obj):
+        """Update bgp-as-a-service.
+        
+        :param obj: :class:`.BgpAsAService` object
+        
+        """
+        raise NotImplementedError, 'bgp_as_a_service_update is %s\'s responsibility' % (str(type (self)))
+    #end bgp_as_a_service_update
+
+    def bgp_as_a_services_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all bgp-as-a-services.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.BgpAsAService` objects
+        
+        """
+        raise NotImplementedError, 'bgp_as_a_services_list is %s\'s responsibility' % (str(type (self)))
+    #end bgp_as_a_services_list
+
+    def bgp_as_a_service_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete bgp-as-a-service from the system.
+        
+        :param fq_name: Fully qualified name of bgp-as-a-service
+        :param id: UUID of bgp-as-a-service
+        :param ifmap_id: IFMAP id of bgp-as-a-service
+        
+        """
+        raise NotImplementedError, 'bgp_as_a_service_delete is %s\'s responsibility' % (str(type (self)))
+    #end bgp_as_a_service_delete
+
+    def get_default_bgp_as_a_service_id(self):
+        """Return UUID of default bgp-as-a-service."""
+        raise NotImplementedError, 'get_default_bgp_as_a_service_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_bgp_as_a_service_delete
+
+    def port_tuple_create(self, obj):
+        """Create new port-tuple.
+        
+        :param obj: :class:`.PortTuple` object
+        
+        """
+        raise NotImplementedError, 'port_tuple_create is %s\'s responsibility' % (str(type (self)))
+    #end port_tuple_create
+
+    def port_tuple_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return port-tuple information.
+        
+        :param fq_name: Fully qualified name of port-tuple
+        :param fq_name_str: Fully qualified name string of port-tuple
+        :param id: UUID of port-tuple
+        :param ifmap_id: IFMAP id of port-tuple
+        :returns: :class:`.PortTuple` object
+        
+        """
+        raise NotImplementedError, 'port_tuple_read is %s\'s responsibility' % (str(type (self)))
+    #end port_tuple_read
+
+    def port_tuple_update(self, obj):
+        """Update port-tuple.
+        
+        :param obj: :class:`.PortTuple` object
+        
+        """
+        raise NotImplementedError, 'port_tuple_update is %s\'s responsibility' % (str(type (self)))
+    #end port_tuple_update
+
+    def port_tuples_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all port-tuples.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.PortTuple` objects
+        
+        """
+        raise NotImplementedError, 'port_tuples_list is %s\'s responsibility' % (str(type (self)))
+    #end port_tuples_list
+
+    def port_tuple_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete port-tuple from the system.
+        
+        :param fq_name: Fully qualified name of port-tuple
+        :param id: UUID of port-tuple
+        :param ifmap_id: IFMAP id of port-tuple
+        
+        """
+        raise NotImplementedError, 'port_tuple_delete is %s\'s responsibility' % (str(type (self)))
+    #end port_tuple_delete
+
+    def get_default_port_tuple_id(self):
+        """Return UUID of default port-tuple."""
+        raise NotImplementedError, 'get_default_port_tuple_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_port_tuple_delete
 
     def analytics_node_create(self, obj):
         """Create new analytics-node.
@@ -1692,7 +1976,7 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'interface_route_table_update is %s\'s responsibility' % (str(type (self)))
     #end interface_route_table_update
 
-    def interface_route_tables_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+    def interface_route_tables_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
         """List all interface-route-tables.
         
         :param parent_id: UUID of parent as optional search filter
@@ -1750,7 +2034,7 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'service_template_update is %s\'s responsibility' % (str(type (self)))
     #end service_template_update
 
-    def service_templates_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+    def service_templates_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
         """List all service-templates.
         
         :param parent_id: UUID of parent as optional search filter
@@ -1776,6 +2060,64 @@ class ConnectionDriverBase(object):
         """Return UUID of default service-template."""
         raise NotImplementedError, 'get_default_service_template_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_service_template_delete
+
+    def dsa_rule_create(self, obj):
+        """Create new dsa-rule.
+        
+        :param obj: :class:`.DsaRule` object
+        
+        """
+        raise NotImplementedError, 'dsa_rule_create is %s\'s responsibility' % (str(type (self)))
+    #end dsa_rule_create
+
+    def dsa_rule_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return dsa-rule information.
+        
+        :param fq_name: Fully qualified name of dsa-rule
+        :param fq_name_str: Fully qualified name string of dsa-rule
+        :param id: UUID of dsa-rule
+        :param ifmap_id: IFMAP id of dsa-rule
+        :returns: :class:`.DsaRule` object
+        
+        """
+        raise NotImplementedError, 'dsa_rule_read is %s\'s responsibility' % (str(type (self)))
+    #end dsa_rule_read
+
+    def dsa_rule_update(self, obj):
+        """Update dsa-rule.
+        
+        :param obj: :class:`.DsaRule` object
+        
+        """
+        raise NotImplementedError, 'dsa_rule_update is %s\'s responsibility' % (str(type (self)))
+    #end dsa_rule_update
+
+    def dsa_rules_list(self, parent_id = None, parent_fq_name = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all dsa-rules.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.DsaRule` objects
+        
+        """
+        raise NotImplementedError, 'dsa_rules_list is %s\'s responsibility' % (str(type (self)))
+    #end dsa_rules_list
+
+    def dsa_rule_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete dsa-rule from the system.
+        
+        :param fq_name: Fully qualified name of dsa-rule
+        :param id: UUID of dsa-rule
+        :param ifmap_id: IFMAP id of dsa-rule
+        
+        """
+        raise NotImplementedError, 'dsa_rule_delete is %s\'s responsibility' % (str(type (self)))
+    #end dsa_rule_delete
+
+    def get_default_dsa_rule_id(self):
+        """Return UUID of default dsa-rule."""
+        raise NotImplementedError, 'get_default_dsa_rule_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_dsa_rule_delete
 
     def virtual_ip_create(self, obj):
         """Create new virtual-ip.
@@ -1951,6 +2293,64 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_security_group_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_security_group_delete
 
+    def service_health_check_create(self, obj):
+        """Create new service-health-check.
+        
+        :param obj: :class:`.ServiceHealthCheck` object
+        
+        """
+        raise NotImplementedError, 'service_health_check_create is %s\'s responsibility' % (str(type (self)))
+    #end service_health_check_create
+
+    def service_health_check_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return service-health-check information.
+        
+        :param fq_name: Fully qualified name of service-health-check
+        :param fq_name_str: Fully qualified name string of service-health-check
+        :param id: UUID of service-health-check
+        :param ifmap_id: IFMAP id of service-health-check
+        :returns: :class:`.ServiceHealthCheck` object
+        
+        """
+        raise NotImplementedError, 'service_health_check_read is %s\'s responsibility' % (str(type (self)))
+    #end service_health_check_read
+
+    def service_health_check_update(self, obj):
+        """Update service-health-check.
+        
+        :param obj: :class:`.ServiceHealthCheck` object
+        
+        """
+        raise NotImplementedError, 'service_health_check_update is %s\'s responsibility' % (str(type (self)))
+    #end service_health_check_update
+
+    def service_health_checks_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all service-health-checks.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.ServiceHealthCheck` objects
+        
+        """
+        raise NotImplementedError, 'service_health_checks_list is %s\'s responsibility' % (str(type (self)))
+    #end service_health_checks_list
+
+    def service_health_check_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete service-health-check from the system.
+        
+        :param fq_name: Fully qualified name of service-health-check
+        :param id: UUID of service-health-check
+        :param ifmap_id: IFMAP id of service-health-check
+        
+        """
+        raise NotImplementedError, 'service_health_check_delete is %s\'s responsibility' % (str(type (self)))
+    #end service_health_check_delete
+
+    def get_default_service_health_check_id(self):
+        """Return UUID of default service-health-check."""
+        raise NotImplementedError, 'get_default_service_health_check_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_service_health_check_delete
+
     def provider_attachment_create(self, obj):
         """Create new provider-attachment.
         
@@ -2118,6 +2518,64 @@ class ConnectionDriverBase(object):
         """Return UUID of default loadbalancer-healthmonitor."""
         raise NotImplementedError, 'get_default_loadbalancer_healthmonitor_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_loadbalancer_healthmonitor_delete
+
+    def loadbalancer_listener_create(self, obj):
+        """Create new loadbalancer-listener.
+        
+        :param obj: :class:`.LoadbalancerListener` object
+        
+        """
+        raise NotImplementedError, 'loadbalancer_listener_create is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_listener_create
+
+    def loadbalancer_listener_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return loadbalancer-listener information.
+        
+        :param fq_name: Fully qualified name of loadbalancer-listener
+        :param fq_name_str: Fully qualified name string of loadbalancer-listener
+        :param id: UUID of loadbalancer-listener
+        :param ifmap_id: IFMAP id of loadbalancer-listener
+        :returns: :class:`.LoadbalancerListener` object
+        
+        """
+        raise NotImplementedError, 'loadbalancer_listener_read is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_listener_read
+
+    def loadbalancer_listener_update(self, obj):
+        """Update loadbalancer-listener.
+        
+        :param obj: :class:`.LoadbalancerListener` object
+        
+        """
+        raise NotImplementedError, 'loadbalancer_listener_update is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_listener_update
+
+    def loadbalancer_listeners_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all loadbalancer-listeners.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.LoadbalancerListener` objects
+        
+        """
+        raise NotImplementedError, 'loadbalancer_listeners_list is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_listeners_list
+
+    def loadbalancer_listener_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete loadbalancer-listener from the system.
+        
+        :param fq_name: Fully qualified name of loadbalancer-listener
+        :param id: UUID of loadbalancer-listener
+        :param ifmap_id: IFMAP id of loadbalancer-listener
+        
+        """
+        raise NotImplementedError, 'loadbalancer_listener_delete is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_listener_delete
+
+    def get_default_loadbalancer_listener_id(self):
+        """Return UUID of default loadbalancer-listener."""
+        raise NotImplementedError, 'get_default_loadbalancer_listener_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_loadbalancer_listener_delete
 
     def virtual_network_create(self, obj):
         """Create new virtual-network.
@@ -2293,6 +2751,64 @@ class ConnectionDriverBase(object):
         raise NotImplementedError, 'get_default_qos_forwarding_class_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_qos_forwarding_class_delete
 
+    def loadbalancer_create(self, obj):
+        """Create new loadbalancer.
+        
+        :param obj: :class:`.Loadbalancer` object
+        
+        """
+        raise NotImplementedError, 'loadbalancer_create is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_create
+
+    def loadbalancer_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return loadbalancer information.
+        
+        :param fq_name: Fully qualified name of loadbalancer
+        :param fq_name_str: Fully qualified name string of loadbalancer
+        :param id: UUID of loadbalancer
+        :param ifmap_id: IFMAP id of loadbalancer
+        :returns: :class:`.Loadbalancer` object
+        
+        """
+        raise NotImplementedError, 'loadbalancer_read is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_read
+
+    def loadbalancer_update(self, obj):
+        """Update loadbalancer.
+        
+        :param obj: :class:`.Loadbalancer` object
+        
+        """
+        raise NotImplementedError, 'loadbalancer_update is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_update
+
+    def loadbalancers_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all loadbalancers.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.Loadbalancer` objects
+        
+        """
+        raise NotImplementedError, 'loadbalancers_list is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancers_list
+
+    def loadbalancer_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete loadbalancer from the system.
+        
+        :param fq_name: Fully qualified name of loadbalancer
+        :param id: UUID of loadbalancer
+        :param ifmap_id: IFMAP id of loadbalancer
+        
+        """
+        raise NotImplementedError, 'loadbalancer_delete is %s\'s responsibility' % (str(type (self)))
+    #end loadbalancer_delete
+
+    def get_default_loadbalancer_id(self):
+        """Return UUID of default loadbalancer."""
+        raise NotImplementedError, 'get_default_loadbalancer_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_loadbalancer_delete
+
     def database_node_create(self, obj):
         """Create new database-node.
         
@@ -2466,6 +2982,64 @@ class ConnectionDriverBase(object):
         """Return UUID of default network-ipam."""
         raise NotImplementedError, 'get_default_network_ipam_delete is %s\'s responsibility' % (str(type (self)))
     #end get_default_network_ipam_delete
+
+    def route_aggregate_create(self, obj):
+        """Create new route-aggregate.
+        
+        :param obj: :class:`.RouteAggregate` object
+        
+        """
+        raise NotImplementedError, 'route_aggregate_create is %s\'s responsibility' % (str(type (self)))
+    #end route_aggregate_create
+
+    def route_aggregate_read(self, fq_name = None, fq_name_str = None, id = None, ifmap_id = None):
+        """Return route-aggregate information.
+        
+        :param fq_name: Fully qualified name of route-aggregate
+        :param fq_name_str: Fully qualified name string of route-aggregate
+        :param id: UUID of route-aggregate
+        :param ifmap_id: IFMAP id of route-aggregate
+        :returns: :class:`.RouteAggregate` object
+        
+        """
+        raise NotImplementedError, 'route_aggregate_read is %s\'s responsibility' % (str(type (self)))
+    #end route_aggregate_read
+
+    def route_aggregate_update(self, obj):
+        """Update route-aggregate.
+        
+        :param obj: :class:`.RouteAggregate` object
+        
+        """
+        raise NotImplementedError, 'route_aggregate_update is %s\'s responsibility' % (str(type (self)))
+    #end route_aggregate_update
+
+    def route_aggregates_list(self, parent_id = None, parent_fq_name = None, back_ref_id = None, obj_uuids = None, fields = None, detail = False, count = False):
+        """List all route-aggregates.
+        
+        :param parent_id: UUID of parent as optional search filter
+        :param parent_fq_name: full qualified name of parent as optional search filter
+        :returns: list of :class:`.RouteAggregate` objects
+        
+        """
+        raise NotImplementedError, 'route_aggregates_list is %s\'s responsibility' % (str(type (self)))
+    #end route_aggregates_list
+
+    def route_aggregate_delete(self, fq_name = None, id = None, ifmap_id = None):
+        """Delete route-aggregate from the system.
+        
+        :param fq_name: Fully qualified name of route-aggregate
+        :param id: UUID of route-aggregate
+        :param ifmap_id: IFMAP id of route-aggregate
+        
+        """
+        raise NotImplementedError, 'route_aggregate_delete is %s\'s responsibility' % (str(type (self)))
+    #end route_aggregate_delete
+
+    def get_default_route_aggregate_id(self):
+        """Return UUID of default route-aggregate."""
+        raise NotImplementedError, 'get_default_route_aggregate_delete is %s\'s responsibility' % (str(type (self)))
+    #end get_default_route_aggregate_delete
 
     def logical_router_create(self, obj):
         """Create new logical-router.

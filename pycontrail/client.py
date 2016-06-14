@@ -77,7 +77,7 @@ class Client(object):
 
         self._obj_serializer = self._obj_serializer_diff
         if hasattr(pycontrail.gen.vnc_api_client_gen, 'all_resource_types'):
-            all_resource_types = pycontrail.gen.all_resource_types
+            all_resource_types = pycontrail.gen.vnc_api_client_gen.all_resource_types
         else:
             # <=2.20
             obj_types = \
